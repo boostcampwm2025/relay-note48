@@ -193,3 +193,18 @@ AI와 변수명에 대해 토론하면서 더 좋은 이름을 선택하는 과�
 #### 3일차
 
 #### 4일차
+
+
+### `J113` : 퀘스트 2. 코드 심리테스트 받기
+
+이번주 제 미션은 코드로 MBTI를 진단받는 미션입니다. 평소에 MBTI를 좋아해서 제 성격이 코드에 투영되어있나 궁금했는데요. 결과는 전혀 다르게 나왔네요 :실망: 이전에, ChatGPT API로 서비스를 만든 경험이 있어서 MBIT 진단도 잘해주면 재밌는 토이 프로젝트를 할 수 있겠다 생각을 해봤습니다. 그러나, 결과가 마음에 들지는 않네요 :( 코드로 MBTI 진단하는 서비스는 아직 멀었나봅니다.
+
+
+<img width="759" height="842" alt="image" src="https://github.com/user-attachments/assets/aae9cc4b-d9dd-4c81-9aa7-999f9b29f960" />
+
+
+
+
+<img width="840" height="864" alt="image" src="https://github.com/user-attachments/assets/80eb2792-10e6-4ed4-8d8c-7fb854fd0d06" />
+
+
