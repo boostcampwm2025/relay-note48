@@ -204,7 +204,8 @@ AI와 변수명에 대해 토론하면서 더 좋은 이름을 선택하는 과�
 
 
 
+**달성 조건: 슬랙에 공유하기**
 
-<img width="840" height="864" alt="image" src="https://github.com/user-attachments/assets/80eb2792-10e6-4ed4-8d8c-7fb854fd0d06" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/80eb2792-10e6-4ed4-8d8c-7fb854fd0d06" />
 
 
