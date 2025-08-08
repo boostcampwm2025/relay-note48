@@ -184,28 +184,419 @@ AI와 변수명에 대해 토론하면서 더 좋은 이름을 선택하는 과�
 
 # week3 실행 결과
 
-### `J178`: 퀘스트 3. AI와 변수명 토론하기
+## `J178`: 퀘스트 3. AI와 변수명 토론하기
 
-#### 1일차
+### 1일차
 
-#### 2일차
+Q. 이 파일에서 변수명을 검토하고 고쳐쓸만한 변수명을 추천해주세요. 이유는 가독성 및 의도 명확화
 
-#### 3일차
+A. 먼저 `query.js` 파일의 내용을 확인하여 변수명을 검토해보겠습니다.
 
-#### 4일차
+Read file: query.js
+`query.js` 파일을 검토한 결과, 다음과 같은 변수명 개선사항을 추천드립니다:
 
+### 변수명 개선 추천사항
+
+### 1. **함수명 개선**
+
+- `findMostSimilarInVectorDBKNN` → `findSimilarWordsKNN`
+- `findMostSimilarInVectorDBANN` → `findSimilarWordsANN`
+- `handleQueryKNN` → `processKNNQuery`
+- `handleQueryANN` → `processANNQuery`
+
+**이유**: 함수명이 너무 길고 반복적입니다. 더 간결하고 명확한 이름으로 변경하면 가독성이 향상됩니다.
+
+### 2. **변수명 개선**
+
+#### 현재: `similarityScores`
+
+**개선안**: `wordSimilarities` 또는 `similarityResults`
+**이유**: 단순히 점수만 담는 것이 아니라 단어와 유사도 점수를 함께 담는 객체 배열이므로 더 구체적인 이름이 적절합니다.
+
+#### 현재: `row`
+
+**개선안**: `vectorRow` 또는 `dbRow`
+**이유**: 데이터베이스의 벡터 테이블에서 가져온 행임을 명확히 표현합니다.
+
+#### 현재: `vector`
+
+**개선안**: `wordVector` 또는 `candidateVector`
+**이유**: 대상 벡터와 구분하기 위해 더 구체적인 이름이 필요합니다.
+
+#### 현재: `similarity`
+
+**개선안**: `cosineSimilarity` 또는 `similarityScore`
+**이유**: 코사인 유사도임을 명확히 표현합니다.
+
+#### 현재: `metadata`
+
+**개선안**: `wordMetadata`
+**이유**: 단어 관련 메타데이터임을 명확히 표현합니다.
+
+#### 현재: `minDist`
+
+**개선안**: `minDistance` 또는 `closestDistance`
+**이유**: 축약어보다는 완전한 단어를 사용하는 것이 가독성에 좋습니다.
+
+#### 현재: `nearestClusterId`
+
+**개선안**: `closestClusterId`
+**이유**: 'nearest'보다 'closest'가 더 일반적으로 사용됩니다.
+
+#### 현재: `candidates`
+
+**개선안**: `clusterCandidates` 또는 `candidateVectors`
+**이유**: 클러스터 내 후보 벡터들임을 명확히 표현합니다.
+
+#### 현재: `scored`
+
+**개선안**: `scoredCandidates` 또는 `rankedCandidates`
+**이유**: 점수가 매겨진 후보들임을 명확히 표현합니다.
+
+#### 현재: `_score`
+
+**개선안**: `similarityScore` 또는 `cosineScore`
+**이유**: 언더스코어는 불필요하며, 더 명확한 이름을 사용하는 것이 좋습니다.
+
+#### 현재: `topResults`
+
+**개선안**: `topCandidates` 또는 `bestMatches`
+**이유**: 상위 결과들임을 더 명확히 표현합니다.
+
+### 3. **매개변수명 개선**
+
+#### 현재: `args`
+
+**개선안**: `commandArgs` 또는 `queryArgs`
+**이유**: 명령행 인수임을 명확히 표현합니다.
+
+#### 현재: `targetWord`
+
+**개선안**: `queryWord` 또는 `searchWord`
+**이유**: 검색 대상 단어임을 더 명확히 표현합니다.
+
+### 4. **상수명 개선**
+
+#### 현재: `k`
+
+**개선안**: `clusterCount` 또는 `numClusters`
+**이유**: 클러스터 개수임을 명확히 표현합니다.
+
+이러한 개선사항들을 적용하면 코드의 가독성과 의도가 더욱 명확해질 것입니다. 특히 벡터 데이터베이스와 관련된 복잡한 로직에서 각 변수의 역할을 더 쉽게 이해할 수 있게 됩니다.
+
+### 2일차
+
+Q. main2.js 파일에서 변수명을 검토하고 고쳐쓸만한 변수명을 추천해주세요. 이유는 가독성 및 의도 명확화
+
+A. `main2.js` 파일의 내용을 확인하여 변수명을 검토해보겠습니다.
+
+Read file: main2.js
+`main2.js` 파일을 검토한 결과, 다음과 같은 변수명 개선사항을 추천드립니다:
+
+### 변수명 개선 추천사항
+
+### 1. **함수명 개선**
+
+#### 현재: `handleMainInput`
+
+**개선안**: `processUserCommand` 또는 `executeCommand`
+**이유**: 사용자 입력을 처리한다는 의미가 더 명확해집니다.
+
+#### 현재: `main2`
+
+**개선안**: `startVectorDatabaseApp` 또는 `initializeApp`
+**이유**: 함수의 역할이 앱을 시작하고 초기화하는 것이므로 더 구체적인 이름이 적절합니다.
+
+### 2. **변수명 개선**
+
+#### 현재: `rl`
+
+**개선안**: `readlineInterface` 또는 `userInputInterface`
+**이유**: 축약어보다는 완전한 이름을 사용하여 가독성을 높입니다.
+
+#### 현재: `line`
+
+**개선안**: `userInput` 또는 `commandLine`
+**이유**: 사용자 입력임을 더 명확히 표현합니다.
+
+#### 현재: `input`
+
+**개선안**: `userCommand` 또는 `commandInput`
+**이유**: 명령어 입력임을 더 명확히 표현합니다.
+
+#### 현재: `cmd`
+
+**개선안**: `command` 또는 `operation`
+**이유**: 축약어보다는 완전한 단어를 사용합니다.
+
+#### 현재: `args`
+
+**개선안**: `commandArguments` 또는 `parameters`
+**이유**: 명령어 인수임을 더 명확히 표현합니다.
+
+### 3. **상수명 개선**
+
+#### 현재: `db`, `db_app`
+
+**개선안**: `embeddingDatabase`, `applicationDatabase`
+**이유**: 각 데이터베이스의 용도를 명확히 표현합니다.
+
+### 4. **이벤트 리스너 콜백 함수 개선**
+
+#### 현재: `(line) => { ... }`
+
+**개선안**: `(userInput) => { ... }`
+**이유**: 매개변수명을 더 명확하게 합니다.
+
+#### 현재: `(err) => { ... }`
+
+**개선안**: `(error) => { ... }`
+**이유**: 축약어보다는 완전한 단어를 사용합니다.
+
+### 5. **주석 개선**
+
+#### 현재: `// 'line' 이벤트 리스너 등록`
+
+**개선안**: `// 사용자 입력 이벤트 리스너 등록`
+**이유**: 더 명확한 설명을 제공합니다.
+
+#### 현재: `// 'close' 이벤트 리스너 등록`
+
+**개선안**: `// 프로그램 종료 이벤트 리스너 등록`
+**이유**: 이벤트의 목적을 더 명확히 표현합니다.
+
+### 6. **switch 문 내부 개선**
+
+각 case 문에서 사용하는 함수 호출 부분은 이미 잘 구성되어 있지만, 주석을 더 명확하게 할 수 있습니다:
+
+#### 현재: `// 벡터 삽입`
+
+**개선안**: `// 단어 벡터 삽입`
+**이유**: 더 구체적인 설명을 제공합니다.
+
+#### 현재: `// KNN 벡터 유사도 검색`
+
+**개선안**: `// KNN 기반 단어 유사도 검색`
+**이유**: 더 구체적인 설명을 제공합니다.
+
+### 7. **전체적인 구조 개선 제안**
+
+- `measureTime` 함수 호출 부분에서 콜백 함수를 별도 변수로 분리하여 가독성을 높일 수 있습니다.
+- 각 명령어별로 별도의 함수로 분리하여 `handleMainInput` 함수의 복잡도를 줄일 수 있습니다.
+
+이러한 개선사항들을 적용하면 코드의 가독성과 유지보수성이 크게 향상될 것입니다. 특히 명령어 처리 로직에서 각 변수의 역할을 더 쉽게 이해할 수 있게 됩니다.
+
+### 3일차
+
+Q. 현재 파일에 대해 가독성과 의도 명확화 관점에서 수정할만한 변수명을 추천해주세요.
+
+A. 현재 파일의 내용을 확인하여 가독성과 의도 명확화 관점에서 개선할 수 있는 변수명을 추천해드리겠습니다.
+
+Read file: ShoppingServer_handleTCPMessage.js
+파일을 분석한 결과, 가독성과 의도 명확화 관점에서 다음과 같은 변수명 개선을 추천드립니다:
+
+### 주요 개선 추천사항
+
+### 1. **오타 수정**
+
+- `capitalAlphbet` → `capitalAlphabet` (라인 22)
+- `buyNumber == NaN` → `buyNumber === NaN` 또는 `isNaN(buyNumber)` (라인 218)
+
+### 2. **의미가 명확하지 않은 변수명**
+
+**`snapInfo` (라인 134, 158, 175, 190)**
+
+- 현재: `[clientKey, maxCount]` 배열
+- 제안: `snapchatSession` 또는 `snapchatState`
+- 이유: 배열보다는 객체로 구조화하고 의미를 명확히 하는 것이 좋음
+
+**`groupMembers` (라인 67, 158)**
+
+- 제안: `groupMemberKeys` 또는 `groupClientKeys`
+- 이유: 실제로는 멤버 키들이므로 더 구체적으로 표현
+
+**`memberKey` (라인 68, 159)**
+
+- 제안: `clientKey` 또는 `memberClientKey`
+- 이유: 일관성 있는 네이밍
+
+**`memberSocket` (라인 70)**
+
+- 제안: `tcpClientSocket`
+- 이유: TCP 클라이언트 소켓임을 명확히
+
+### 3. **더 구체적인 변수명**
+
+**`response` (전체 파일)**
+
+- 각 함수별로 더 구체적인 이름 사용 고려:
+  - `loginResponse`, `logoutResponse`, `catalogResponse` 등
+
+**`groupName` (라인 125, 145, 175, 190)**
+
+- 제안: `assignedGroup` 또는 `clientGroup`
+- 이유: 할당된 그룹임을 명확히
+
+**`BroadcastResult` (라인 320)**
+
+- 제안: `broadcastSuccess` 또는 `udpBroadcastResult`
+- 이유: 소문자로 시작하고 의미를 명확히
+
+### 4. **상수 및 매직 넘버**
+
+**`15` (라인 95)**
+
+- 제안: `MINIMUM_PRODUCT_COUNT` 또는 `REQUIRED_PRODUCT_COUNT`
+- 이유: 매직 넘버의 의미를 명확히
+
+**`256` (라인 26)**
+
+- 제안: `MAX_CAMP_ID_NUMBER`
+- 이유: 최대 캠프 ID 번호임을 명확히
+
+### 5. **함수 내부 로컬 변수**
+
+**`p` (라인 225, 295)**
+
+- 제안: `product`
+- 이유: 더 명확한 의미
+
+**`address, port, protocol` (라인 75, 165)**
+
+- 제안: `udpAddress`, `udpPort`, `udpProtocol`
+- 이유: UDP 관련 정보임을 명확히
+
+이러한 개선사항들을 적용하면 코드의 가독성과 유지보수성이 크게 향상될 것입니다. 특히 `snapInfo` 배열을 객체로 구조화하는 것이 가장 중요한 개선점이라고 생각됩니다.
+
+### 4일차
+
+Q. 현재 파일에 대해 가독성과 의도 명확화 관점에서 수정할만한 변수명을 추천해주세요.
+
+A. 현재 파일의 내용을 확인하여 가독성과 의도 명확화 관점에서 개선할 수 있는 변수명을 추천해드리겠습니다.
+
+Read file: ShoppingServer_TCPFunctions.js
+파일을 분석한 결과, 가독성과 의도 명확화 관점에서 다음과 같은 변수명 개선을 추천드립니다:
+
+### 주요 개선 추천사항
+
+### 1. **함수명 개선**
+
+**`cleanClientKey` (라인 119)**
+
+- 제안: `cleanupClientResources` 또는 `removeClientFromMaps`
+- 이유: 함수가 실제로 하는 일(클라이언트 리소스 정리)을 더 명확히 표현
+
+### 2. **변수명 개선**
+
+**`response` (라인 22, 108)**
+
+- 제안: `tcpResponse` 또는 `methodResponse`
+- 이유: TCP 관련 응답임을 명확히
+
+**`headerData` (라인 68, 75, 85, 108)**
+
+- 제안: `parsedHeader` 또는 `messageHeader`
+- 이유: 파싱된 헤더 데이터임을 명확히
+
+**`totalMessageSize` (라인 72, 76)**
+
+- 제안: `completeMessageSize` 또는 `fullMessageSize`
+- 이유: 완전한 메시지 크기임을 명확히
+
+**`jsonBuffer` (라인 85)**
+
+- 제안: `jsonDataBuffer` 또는 `jsonPayloadBuffer`
+- 이유: JSON 데이터를 담고 있는 버퍼임을 명확히
+
+**`jsonString` (라인 86)**
+
+- 제안: `jsonPayloadString` 또는 `jsonDataString`
+- 이유: JSON 문자열 데이터임을 명확히
+
+**`allocatedGroup` (라인 127, 130)**
+
+- 제안: `clientAssignedGroup` 또는 `userGroup`
+- 이유: 클라이언트에게 할당된 그룹임을 명확히
+
+**`groupMemberKeys` (라인 133)**
+
+- 제안: `groupClientKeys` 또는 `groupMemberClientKeys`
+- 이유: 그룹에 속한 클라이언트 키들임을 명확히
+
+**`data` (라인 155)**
+
+- 제안: `receivedData` 또는 `socketData`
+- 이유: 소켓에서 수신된 데이터임을 명확히
+
+**`err` (라인 175)**
+
+- 제안: `socketError` 또는 `connectionError`
+- 이유: 소켓 에러임을 명확히
+
+### 3. **매개변수명 개선**
+
+**`processBuffer` 함수의 `buffer` 매개변수**
+
+- 제안: `messageBuffer` 또는 `dataBuffer`
+- 이유: 메시지 데이터를 담고 있는 버퍼임을 명확히
+
+**`cleanClientKey` 함수의 `buffer` 매개변수**
+
+- 제안: `clientBuffer` 또는 `socketBuffer`
+- 이유: 클라이언트의 버퍼임을 명확히
+
+### 4. **로컬 변수명 개선**
+
+**`clientKey` (라인 147, 155, 165, 175, 185)**
+
+- 현재는 적절하지만, 일관성을 위해 `tcpClientKey`로 고려 가능
+
+### 5. **상수 및 매직 넘버**
+
+**`8` (라인 67, 72, 85, 108)**
+
+- 제안: `HEADER_SIZE` 또는 `MESSAGE_HEADER_SIZE`
+- 이유: 헤더 크기임을 명확히
+
+**`0` (라인 67, 108)**
+
+- 제안: `MINIMUM_BUFFER_SIZE` 또는 `HEADER_MIN_SIZE`
+- 이유: 최소 버퍼 크기임을 명확히
+
+### 6. **에러 처리 관련**
+
+**`errorResponse` (라인 91)**
+
+- 제안: `jsonParseErrorResponse` 또는 `parsingErrorResponse`
+- 이유: JSON 파싱 에러 응답임을 명확히
+
+### 7. **로그 메시지 관련**
+
+로그 메시지에서 사용되는 변수들은 대부분 적절하지만, 일관성을 위해 다음과 같이 개선 가능:
+
+- `data.length` → `receivedDataSize`
+- `buffer.length` → `currentBufferSize`
+
+### 8. **전체적인 네이밍 패턴**
+
+현재 코드는 대체로 잘 작성되어 있지만, 다음과 같은 패턴을 일관되게 적용하면 더 좋을 것 같습니다:
+
+- TCP 관련 변수에는 `tcp` 접두사 사용
+- 버퍼 관련 변수에는 `buffer` 접미사 사용
+- 에러 관련 변수에는 `error` 접미사 사용
+
+이러한 개선사항들을 적용하면 코드의 가독성과 유지보수성이 향상될 것입니다. 특히 `cleanClientKey` 함수명과 `allocatedGroup` 변수명의 개선이 가장 중요한 개선점이라고 생각됩니다.
+
+#### J178 느낀점
+
+코딩하다 무심코 자기만의 생각대로 변수명을 정해놓고 거기에 익숙해지나, 나중에 코드를 읽어보면 변수명이 이해가 안가는 의도일때가 있다. AI는 상상 이상으로 나의 허술한 변수 작명을 가독성과 의도 명확화 관점에서 지적해주었다. 물론 타이핑할 때 좀 더 오래걸리긴 하겠지만, 먼저 코드 초안 완성 후 ai한테 변수명을 바꾼 상태를 통일해달라고 하는 것도 좋을 것 같다.
 
 ### `J113` : 퀘스트 2. 코드 심리테스트 받기
 
 이번주 제 미션은 코드로 MBTI를 진단받는 미션입니다. 평소에 MBTI를 좋아해서 제 성격이 코드에 투영되어있나 궁금했는데요. 결과는 전혀 다르게 나왔네요 :실망: 이전에, ChatGPT API로 서비스를 만든 경험이 있어서 MBIT 진단도 잘해주면 재밌는 토이 프로젝트를 할 수 있겠다 생각을 해봤습니다. 그러나, 결과가 마음에 들지는 않네요 :( 코드로 MBTI 진단하는 서비스는 아직 멀었나봅니다.
 
-
 <img width="759" height="842" alt="image" src="https://github.com/user-attachments/assets/aae9cc4b-d9dd-4c81-9aa7-999f9b29f960" />
-
-
 
 **달성 조건: 슬랙에 공유하기**
 
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/80eb2792-10e6-4ed4-8d8c-7fb854fd0d06" />
-
-
